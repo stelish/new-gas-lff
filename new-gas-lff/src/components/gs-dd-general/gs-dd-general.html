@@ -1,0 +1,22 @@
+<div class="gs-dd-general" [ngClass]="{gsDdShow: showDD}">
+
+  <!-- content -->
+  <div class="gs-dd-general-wrapper">
+    <div class="gs-dd" [ngClass]="{gsDdOpen: showDD}">
+      <div class="gs-dd-general-inner">
+        <div class="gs-dd-col clearfix">
+          <h4 *ngIf="title">{{title}}</h4>
+          <ul>
+            <li *ngFor="let item of items" (click)="itemSelected(item)" class="gs-dd-filtered" [ngClass]="{selected:selectedItem == item}"><a>{{item.name}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

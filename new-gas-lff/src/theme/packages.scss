@@ -1,0 +1,241 @@
+.gs-packages{
+  position: relative;
+  margin: 0 auto;
+  max-width: $max-width;
+
+  .gs-packages-title{
+    padding: 15px;
+    text-align: left;
+    position: relative;
+
+    button{
+      position: absolute;
+      right: 0;
+      margin: 0;
+      color: $legacy-green;
+      top: 5px;
+      line-height: 14px;
+
+      ion-icon{
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .gs-packages-detail-cta {
+    width: 100%;
+    margin: 4px 0;
+    box-sizing: border-box;
+    padding: 0;
+    color: #fff;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    min-height: 85px;
+    font-size: 14px;
+
+    &:hover{
+      background: $light-grey;
+    }
+
+    .gs-package-offering-pax{
+      position:absolute;
+      bottom: 5px;
+      left:0;
+      display: inline-flex;
+      padding: 5px 5px 0 5px;
+      p{
+        margin: 0 5px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 9px;
+      }
+      .caret{
+        color:$red-orange;
+        font-weight: bold;
+      }
+    }
+
+    .gs-packages-cta-origin{
+      width:30%;
+      padding: 5px 5px 0;
+      small{
+        float: left;
+        line-height: 13px;
+        font-size: 90%;
+        margin-right: 2px;
+      }
+
+      h4{
+        margin: 0;
+        font-size: 100%;
+        font-weight: normal;
+        line-height: 16px;
+      }
+      p{
+        font-size: 80%;
+        margin: 0;
+      }
+
+      .gs-packages-cta-origin-title{
+        font-weight: 700;
+        font-size: 135%;
+        line-height: 20px;
+        margin: 0 0 5px;
+      }
+
+
+    }
+    .gs-packages-offering-cta-when{
+      width: 35%;
+      text-align: center;
+      font-size: 14px;
+      padding: 5px 10px 0;
+
+      ion-icon{
+        margin-right: 5px;
+      }
+
+    }
+    .gs-packages-cta-seats{
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+
+    .gs-packages-cta-price{
+      min-width: 110px;
+      max-width: 110px;
+      margin-top: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+
+      .gs-cta-price {
+
+        h4 {
+          margin: 0 2px;
+          font-size: 135%;
+          font-weight: 700;
+          line-height: 17px;
+        }
+      }
+
+      small{
+        float: left;
+        line-height: 13px;
+        font-size: 90%;
+        margin-right: 2px;
+      }
+      ion-icon{
+        font-weight: 700;
+        color: $red-orange;
+      }
+    }
+  }
+  .gs-packages-cta-btns{
+    margin: -5px 0 5px;
+    display:inline-flex;
+    border-top: solid 1px #eee;
+    width:100%;
+    padding: 5px 0;
+
+    .button-md, .button-ios {
+      font-size: 100%;
+      float:right;
+      position: relative;
+      padding: 0 45px;
+
+      ion-icon{
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .item.item-md .checkbox-md, .item.item-ios .checkbox-ios {
+      margin: 0 9px;
+    }
+
+    .checkbox-md .checkbox-checked .checkbox-inner, .checkbox-ios .checkbox-checked .checkbox-inner {
+      left: 5px;
+      width: 10px;
+      height: 15px;
+    }
+
+    .item-md, .item-ios {
+      font-size:80%;
+      padding:0;
+      margin:0;
+      height: 36px;
+      border: none;
+    }
+
+    .item-inner{
+      border:none;
+    }
+
+    .checkbox-md .checkbox-icon, .checkbox-ios .checkbox-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .gs-packages-offering-description{
+    margin: 10px 0;
+
+    .gs-packages-offering-description-main{
+      margin-bottom: 10px;
+    }
+  }
+
+
+  /** Booking Confirmation **/
+  .gs-packages-confirmation{
+
+    .gs-packages-confirmation-header{
+      display: inline-flex;
+      margin: 0;
+
+      ion-icon{
+        color: $legacy-green;
+        font-size: 300%;
+      }
+      h2{
+        font-size: 150%;
+        margin: 0 15px;
+        line-height: 50px;
+      }
+    }
+    p{
+      margin: 5px 0;
+    }
+  }
+
+}
+/** used by pagination **/
+.details {
+  margin-left: 0 !important;
+}
+
+.book{
+  margin-left: -100px !important;
+}
+
+.confirm{
+  margin-left: -200px !important;
+}
+
+.gs-package-seats-container{
+  padding: 2px 5px;
+  margin: 0 0 5px;
+  .gs-package-deal-seats{
+    font-size: 14px;
+    margin-top: 2px;
+    text-align: center;
+  }
+}
+
+

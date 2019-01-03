@@ -1,0 +1,116 @@
+.gs-pagination{
+  position: relative;
+  width: 100%;
+  ul {
+    display: inline-flex;
+    list-style: none;
+    height:100%;
+
+    li{
+      width: 25px;
+      height: 25px;
+      background: $charcoal;
+      color: $white;
+      margin: 5px;
+      text-align: center;
+      line-height: 25px;
+    }
+
+    .selected{
+      background: $red-orange;
+      color: $black;
+    }
+  }
+}
+
+.gs-pagination-right{
+  ul{
+    float: right;
+    margin: -5px 15px 20px 0;
+  }
+}
+
+.gs-pagination-left{
+  ul{
+    float: left;
+    margin: -5px 0 20px 15px;
+  }
+}
+
+/**
+  used in nav header
+**/
+.gs-nav-pagination{
+  width: 100%;
+  max-width: 100%;
+  height: 40px;
+  background: #eee;
+  color: #333;
+  white-space: nowrap;
+  padding-left: 15px;
+  border-bottom: solid 1px $charcoal;
+
+  .gs-nav-pagination-inner {
+    width: 100%;
+    display: inline-flex;
+    padding: 10px 0 0;
+
+    .gs-nav-pagination-parent{
+      display: inline-flex;
+      color: #66ae3c;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    ion-icon{
+      margin:0 10px;
+      padding:0;
+    }
+
+    p{
+      padding: 0;
+      margin:0;
+    }
+
+    .gs-nav-pagination-list{
+      width: 100%;
+      height:100%;
+      overflow:scroll;
+      margin:0;
+      padding:0;
+      min-height: 25px;
+    }
+
+    ul{
+      width:100%;
+      height:25px;
+      list-style: none;
+      margin:0;
+      padding: 0;
+      display: inline-flex;
+
+      .active {
+        font-weight: bold;
+      }
+
+      li{
+        height:100%;
+        white-space: nowrap;
+        display: inline-flex;
+        cursor: pointer;
+
+        p{
+          margin: 0;
+          padding:0;
+          line-height: 25px;
+        }
+      }
+
+      .selected{
+        font-weight: 700;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,27 @@
+<div class="gs-dd-control" id="{{id}}">
+
+  <!-- input -->
+  <div class="gs-dd-origin-selector-input" tappable (click)="showDD($event)" tabindex="{{tabIndex}}">
+    <small>{{prompt}}</small><input type="text" (blur)="blurred($event)" #input (keydown)="handleKeyDown($event)"
+                                    (keyup)="filter($event)" (focus)="focusEvent($event)" autocomplete="false">
+  </div>
+
+  <!-- list -->
+  <div class="gs-dd-dropdown">
+    <div class="gs-dd-dropdown-inner" [class.display-list]="showDropDown">
+      <ul class="show-vertical-scroll" [style.height]="maxNumItemsInView*itemHeight+'px'" #dropdown [scrollTop]="scrollPos">
+        <ng-template ngFor let-item [ngForOf]="displayedOptions" let-i="index" [ngForTrackBy]="trackByIndex">
+          <li tappable (click)="itemClicked(item)" [class.divider]="item.name==''" [class.selected]="i==currentIndex" #itemsCurrentLength tabindex="2">
+            {{item.name}}
+          </li>
+        </ng-template>
+        <li *ngIf="showNoItemFound">No matches found!</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+
+

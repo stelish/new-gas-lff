@@ -1,0 +1,78 @@
+@import "input";
+
+$label-default-margin: 5px 0;
+
+.gs-form {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 40px 16px 100px;
+
+  .gs-form-h4 {
+    font-size: $large-font-size;
+    letter-spacing: 0;
+    line-height: 1.2;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .gs-form-h4 {
+    font-size: $large-font-size;
+    letter-spacing: 0;
+    line-height: 1.2;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gs-form-group {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 0 0 15px;
+  }
+
+  .gs-form-group-label {
+    margin: 0;
+    padding: 15px 0;
+    text-align: left;
+    text-shadow: none;
+  }
+
+  .gs-form-input-wrapper {
+    padding: 5px 0;
+
+    gs-selectbox {
+      width: auto;
+      select {
+        width: auto;
+      }
+    }
+  }
+
+  .gs-form-input {
+    width: 100%;
+    float: right;
+    padding: 5px;
+    position: relative;
+    display: block;
+
+    label {
+      margin: $label-default-margin;
+    }
+  }
+
+  .gs-form-dob {
+    width: 100%;
+
+    gs-selectbox {
+      float: left;
+      margin: 0 5px 0 0;
+    }
+  }
+
+  @media (min-width:$max-width){
+
+  }
+}

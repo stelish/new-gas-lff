@@ -1,0 +1,39 @@
+<div class="gs-ff">
+  <!-- controls -->
+  <div class="gs-ff-form">
+
+    <div class="gs-ff-form-dr">
+      <!-- origin -->
+      <gs-dd-input [ngClass]="{error:flightModelError.origin}" prompt="from" [items]="allAirports" [selectedItem]="ffOriginIata"
+                   [featured]="airportsModel.featuredNZAirportList" tabIndex="-1"
+                   (itemChange)="originChange($event)" id="ff-origin" (focussed)="closeDD()"
+                   gaTrackingEventItem="origin" gaTrackingEventCategory="low fare finder"></gs-dd-input>
+
+      <!-- destination -->
+      <gs-dd-input [ngClass]="{error:flightModelError.destination}" prompt="to" [items]="allAirports" [selectedItem]="ffDestinationIata"
+                   [featured]="airportsModel.featuredNZAirportList" tabIndex="-1"
+                   (itemChange)="destChange($event)" id="ff-dest" (focussed)="closeDD()"
+                   gaTrackingEventItem="destination" gaTrackingEventCategory="low fare finder"></gs-dd-input>
+    </div>
+
+    <div class="gs-ff-form-dates" [ngClass]="{'gs-ff-control-show': userInteraction}">
+
+    </div>
+
+    <div class="gs-ff-form-pax" [ngClass]="{'gs-ff-control-show': userInteraction}">
+
+    </div>
+
+    <div class="gs-ff-form-extras" [ngClass]="{'gs-ff-control-show': userInteraction}">
+
+      <button ion-button>Book</button>
+    </div>
+
+  </div>
+
+  <!-- quick deals -->
+  <div>
+
+  </div>
+</div>
+

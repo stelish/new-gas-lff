@@ -1,0 +1,186 @@
+// Fonts
+// --------------------------------------------------
+
+/** Alternative fonts **/
+$heading-font: "airnewzald",Arial,sans-serif;
+$default-font: "Air New Zealand Sans",Arial,sans-serif;
+
+/** Default font-sizes **/
+$giga-font-size: 41px;
+$mega-font-size: 34px;
+$xxl-font-size: 29px;
+$xl-font-size: 24px;
+$large-font-size: 20px;
+$regular-font-size: 17px;
+$minimum-font-size: 15px;
+$minimum-label-font-size: 13px;
+
+$semi-bold-weight: 600;
+
+$dotted-blue-bottom-border: dotted 1px $blue;
+
+/** Air New Zealand Sans as default font*/
+ion-app.md, ion-app.ios {
+  font-family: $default-font;
+  font-size: $regular-font-size;
+  letter-spacing: 0;
+}
+
+small {
+  font-size: $minimum-font-size !important;
+}
+
+.gs-gen-title-large{
+  font-weight: bold;
+  font-size: $xxl-font-size;
+  color: $charcoal;
+  line-height: $xxl-font-size;
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: $heading-font;
+  max-width: 400px;
+}
+
+.gs-gen-title-medium{
+  font-size: $mega-font-size;
+  color: $legacy-green;
+  line-height: $mega-font-size;
+  margin: 0;
+  font-family: $heading-font;
+  max-width: 400px;
+}
+
+.gs-gen-title-medium:after{
+  content: "";
+  display: block;
+  background: $legacy-green;
+  width: 1px;
+  margin-left: 10px;
+  height: 100%;
+}
+
+.gs-title-thick {
+  font-size: $large-font-size;
+  font-weight: $semi-bold-weight;
+}
+
+.gs-section-title{
+  z-index: 10;
+  display: block;
+  position: relative;
+  padding: $title-padding;
+
+  p {
+    margin: 5px 0 0;
+  }
+}
+
+.gs-section-sub-title {
+  margin: 15px 15px 0;
+}
+
+.gs-section-brief{
+  padding:15px;
+    h1{
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 18px;
+      line-height: 18px;
+      margin: 15px 0 0;
+    }
+  &::after{
+    content: "";
+    height: 3px;
+    background: #008C3C;
+    width: 150px;
+    position: relative;
+    display: block;
+    margin: 15px auto 30px;
+  }
+}
+
+.gs-section-terms {
+  display: inline-flex;
+  font-weight: 500;
+  margin: $terms-margin-large;
+
+  .caret {
+    color: $red-orange;
+    font-weight: 500;
+    margin-right: 5px;
+  }
+}
+
+.gs-tile-underlined {
+  margin: 0 0 5px;
+  font-size: $mega-font-size;
+  line-height: $mega-font-size;
+  font-family: $heading-font;
+}
+
+.text-box {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 4px 8px;
+  color: white;
+  margin: 0;
+}
+
+.text-prompt-tr {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.standard-h4 {
+  font-weight: 700;
+  font-size: $regular-font-size;
+  line-height: 20px;
+  margin: 0 0 5px;
+}
+
+h1,h2,h3,h4 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "liga" on;
+  font-feature-settings: "liga" on;
+}
+
+.text-legacy-green {
+  color: $legacy-green !important;
+}
+
+.text-green {
+  color: $green !important;
+}
+
+.text-orange {
+  color: $red-orange !important;
+}
+
+.gs-route-label{
+
+}
+
+@media (min-width: $max-width) {
+
+  $giga-font-size: 56px;
+  $mega-font-size: 44px;
+  $xxl-font-size: 35px;
+  $xl-font-size: 27px;
+  $large-font-size: 22px;
+  $regular-font-size: 17px;
+  $minimum-font-size: 15px;
+  $minimum-label-font-size: 13px;
+
+
+  .gs-gen-title-medium {
+    max-width: none;
+  }
+
+  .gs-section-title{
+    padding: $title-padding;
+  }
+}

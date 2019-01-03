@@ -1,0 +1,66 @@
+.gs-deal-alert{
+  position: relative;
+  display: inline-flex;
+  margin: 0 16px;
+
+  .gs-rounded-image{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    overflow:hidden;
+    background: $legacy-green;
+  }
+  .gs-rounded-image-border-green{
+    border: solid 1px $legacy-green;
+  }
+
+  .gs-deal-description{
+    padding: 5px 15px;
+    width: 45vw;
+    h4{
+      margin: 0;
+      font-weight: bold;
+      font-size: 150%;
+    }
+
+  }
+
+  .divider {
+    margin: 5px 0;
+  }
+
+  .gs-alert-close{
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-size: 150%;
+  }
+}
+
+.validation-error-alert {
+  display:inline-flex;
+  color: $red;
+  font-size: $regular-font-size;
+  animation: 0.4s LONGFADEIN;
+  margin-top:5px;
+  margin-bottom:15px;
+  width: 100%;
+
+  svg {
+    fill: $red;
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    min-height: 14px;
+
+  }
+
+  p {
+    margin:1px 10px 0 5px;
+    line-height: 14px;
+  }
+}

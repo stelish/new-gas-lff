@@ -1,0 +1,42 @@
+.gs-ticker{
+
+  min-width: 140px;
+  height: 40px;
+  background: $light-grey;
+  overflow: hidden;
+  text-align: center;
+  color: $white;
+  display: inline-flex;
+
+  ion-icon{
+    line-height: 40px;
+    color: #333;
+    font-size: 200%;
+  }
+
+  .disabled{
+    color: #ababab !important;
+  }
+
+
+  .gs-ticker-plus{
+    width: 30%;
+    height: 100%;
+  }
+
+  .gs-ticker-value{
+    background: $white;
+    color: $charcoal;
+    width: 40%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 150%;
+    font-weight: 700;
+  }
+
+  .gs-ticker-minus{
+    width: 30%;
+    height: 100%;
+  }
+
+}

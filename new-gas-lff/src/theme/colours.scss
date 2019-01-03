@@ -1,0 +1,45 @@
+$pale-green: #26A69A;
+$pale-blue: #E1F5FE;
+$cms-blue: #00819e;
+$blue: #03A9F4;
+$black: #010101;
+$light-grey: #eee;
+$steel:#bbbbbb;
+$green: #69BE28;
+$ming: #323232;
+$white: #fff;
+$legacy-green:#008C3C;
+$red-orange:#ff600a;
+$charcoal: #222;
+$grey-100: #F5F5F5;
+$blue-50: #E3F2FD;
+$indigo: #3F51B5;
+$red: #ec040f;
+$pink: #E91E63;
+$light-teal: #A7FFEB;
+$brown: #795548;
+$purple: #9b258f;
+$stone: #767676;
+
+// Air NZ colour scheme
+$airnz-teal: #00708a; // product, button, link or selected
+$airnz-secondary-teal: #008392;;
+$airnz-violet: #981d97;
+$airnz-secondary-violet: #5e366e;
+$airnz-input-focus: #008392;
+
+$colors: (
+  primary:    $blue,
+  secondary:  $red-orange,
+  danger:     $legacy-green,
+  light:      #999,
+  dark:       #222,
+  white: $white
+);
+
+// common
+$background-color: $white;
+$alternate-background-color: #eee;
+$gld-background: $ming;
+$ff-background:$ming;
+$divider-color: #ccc;

@@ -1,0 +1,66 @@
+@mixin squareheight($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin vertical-align {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/** clearfix **/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+.bottom-edge-shadow {
+  -webkit-box-shadow: 0 3px 3px -3px $charcoal;
+  -moz-box-shadow: 0 3px 3px -3px $charcoal;
+  box-shadow: 0 3px 3px -3px $charcoal;
+}
+
+// scroll bars
+.no-scrollbar {
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    overflow: -moz-scrollbars-none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: none;
+  }
+}
+
+@media (max-width: $max-width) {
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    overflow: -moz-scrollbars-none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: none;
+  }
+}
+
+
+.full-width {
+  width:100%;
+  max-width: none !important;
+}
+
+.half-width {
+  width:50%;
+  max-width: 50% !important;
+  float:left;
+}

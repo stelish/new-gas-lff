@@ -1,0 +1,154 @@
+<div class="gs-lff">
+  <section>
+
+    <div id="lffContainer" class=" clearfix">
+
+      <div class="gs-ff-selectors full-width clearfix" tabindex="-1">
+
+        <!-- origin -->
+        <gs-dd-input [ngClass]="{error:flightModelError.origin}" prompt="from" [items]="allAirports" [selectedItem]="ffOriginIata"
+                     [featured]="airportsModel.featuredNZAirportList" tabIndex="-1"
+                     (itemChange)="originChange($event)" id="ff-origin" (focussed)="closeDD()"
+                      gaTrackingEventItem="origin" gaTrackingEventCategory="low fare finder"></gs-dd-input>
+
+        <!-- destination -->
+        <gs-dd-input [ngClass]="{error:flightModelError.destination}" prompt="to" [items]="allAirports" [selectedItem]="ffDestinationIata"
+                     [featured]="airportsModel.featuredNZAirportList" tabIndex="-1"
+                     (itemChange)="destChange($event)" id="ff-dest" (focussed)="closeDD()"
+                     gaTrackingEventItem="destination" gaTrackingEventCategory="low fare finder"></gs-dd-input>
+
+        <!-- cal -->
+        <div class="gs-ff-control" [ngClass]="{'gs-ff-control-show': userInteraction}" (click)="openDD('ff-calendar')"  id="ff-calendar" tabindex="-1">
+          <textarea (focus)="openDD('ff-calendar')" (blur)="closeDD()" contenteditable="false"></textarea>
+          <div class="gs-ff-selector" style="display: inline-flex;" [ngClass]="{error:flightModelError.dates,focussed:ffShowPeriodDD}">
+            <div *ngIf="!ffDepartDate" style="width: 100%;"><small>on</small>&nbsp; Travel dates</div>
+            <div *ngIf="ffDepartDate && !ffReturnDate" style="width: 100%;"><small>on</small>&nbsp; {{ ffDepartDate | date: 'dd MMM yy' }}</div>
+            <div *ngIf="ffDepartDate && ffReturnDate" style="width: 100%;font-size: 95%; max-height:25px;"><small>on</small> {{ ffDepartDate | date: 'dd MMM yy' }} - {{ ffReturnDate | date: 'dd MMM yy' }}</div>
+            <ion-icon class="gs-ff-selector-icon" name="ios-arrow-down-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- pax -->
+        <div class="gs-ff-control gs-ff-pax-dd" [ngClass]="{'gs-ff-control-show': userInteraction}" (click)="openDD('ff-pax')" id="ff-pax" tabindex="-1">
+          <textarea (focus)="openDD('ff-pax')" (blur)="closeDD()" contenteditable="false"></textarea>
+          <div class="gs-ff-selector" [ngClass]="{error:flightModelError.pax,focussed:ffShowPaxDD}">
+            <div class="gs-ff-text">
+              <small>with</small>&nbsp;{{ gsLffUtilityService.getPaxText(flightModel) }}
+            </div>
+            <ion-icon class="gs-ff-selector-icon" name="ios-arrow-down-outline"  style="top: 5px;position: absolute;right: 10px;"></ion-icon>
+          </div>
+        </div>
+
+        <!-- promo code -->
+        <div class="gs-ff-control" id="ff-promo" tabindex="-1" [ngClass]="{'gs-ff-control-show': userInteraction}">
+          <div class="gs-ff-selector gs-ff-promo">
+            <div class="gs-ff-selector-input" style="width: 100%;">
+              <small class="gs-ff-selector-input-sm">promo code</small>&nbsp;<input class="gs-ff-selector-input-field" placeholder="Optional" [(ngModel)]="promoCode" (ionChange)="updatePromoCode($event)"  clearInput>
+            </div>
+          </div>
+        </div>
+
+        <!-- button -->
+        <div class="gs-ff-cta">
+          <button class="gs-ff-cta-btn" ion-button color="secondary" (click)="flightSearch()">Search</button>
+        </div>
+
+      </div>
+
+      <!-- recent search history -->
+      <gs-recent-search></gs-recent-search>
+
+    </div>
+
+    <!-- lff dropdown -->
+    <div id="lffDD" class="gs-dd-container">
+
+      <!-- pax dd -->
+      <div class="gs-dd" [ngClass]="{gsDdOpen: ffShowPaxDD, 'gs-dd-pax' : ffShowPaxDD}">
+        <gs-pax-ticker [flightModel]="flightModel" [servicesEnabled]="!isDomesticRoute()" (paxUpdate)="paxUpdate($event)"></gs-pax-ticker>
+        <!-- close btn -->
+        <gs-close-btn (click)="closeDD()"></gs-close-btn>
+      </div>
+
+      <!-- periods -->
+      <div class="gs-dd" [ngClass]="{gsDdOpen: ffShowPeriodDD,  'gs-dd-cal' : ffShowPeriodDD}">
+        <ul class="gs-dd-ul bg-white">
+          <li class="gs-ff-travel">
+            <gs-calendar (onDepartChange)="onDepartChange($event)" (onReturnChange)="onReturnChange($event)" (onTripTypeChange)="onTripTypeChange($event)"></gs-calendar>
+          </li>
+        </ul>
+        <!-- close btn -->
+        <gs-close-btn (click)="closeDD()"></gs-close-btn>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- tile container -->
+  <div class="gs-ff-tiles" *ngIf="!showNonLffRoute" style="max-height:180px;">
+
+    <div class="pill-bg">
+      <p *ngIf="ffDeals.priceAvailability">Lowest <strong>{{ffOriginIata?.name}}</strong> to <strong>{{ffDestinationIata?.name}}</strong> fares over the next {{ gsLffUtilityService.getDurationIndicationText() }}</p>
+    </div>
+
+    <!-- tiles -->
+    <div #tilesContainer class="gs-ff-tiles-container" (scroll)="onTileScroll($event)">
+      <ul #tiles id="gs-ff-tiles-container-ul" class="clearfix slide-animation gs-ff-tiles-container-ul"
+          [style.minWidth]="gsLffUtilityService.getTotalWidth()+'px'"
+          [style.marginLeft]="currentLeftPosition">
+        <!-- cheapest price -->
+        <li #lffCheapest class="gs-ff-tiles-cheapest card card-1 bg-dark-grey" (click)="bookCheapestDeal()">
+          <div class="gs-ff-tiles-img-container">
+            <img class="gs-ff-tiles-img" [src]="gsLffUtilityService.getThumbnail(ffDestinationIata)">
+          </div>
+          <div class="gs-ff-tiles-description">
+            <p class="gs-ff-tiles-description-p">cheapest</p>
+            <div style="display: inline-flex;">
+              <small>$</small>
+              <h4 class="gs-ff-tiles-description-lowest">{{ffDeals?.lowestPrice}}</h4>
+            </div><br>
+            <p class="gs-ff-tiles-description-p" style="margin-left:10px;">oneway</p>
+          </div>
+        </li>
+        <!-- deal -->
+        <li #lffTile *ngFor="let deal of ffDeals?.priceAvailability; trackBy: gsLffUtilityService.trackByLffId" class="card card-1 gs-lff-item" (click)="bookDeal(deal)">
+          <p class="gs-lff-item-p">{{ deal.outboundDate | date:'EEE' }}</p>
+          <h4 class="gs-lff-item-date">{{ deal.outboundDate | date: 'd MMM'}}</h4>
+          <button class="gs-lff-item-btn" ion-button color="secondary" style="font-size:18px;"><small style="margin-bottom: 3px;margin-right: 1px;font-size: 12px;">$</small>{{deal.farePrice}}</button>
+
+          <!-- deal hat -->
+          <div class="pkgHat" *ngIf="deal.priceType=='SpecialFare'">
+            <span class="pkgHat-span">Deal</span>
+          </div>
+
+        </li>
+        <!-- see more -->
+        <li #lffSeeMore class="gs-ff-tiles-seemore card card-1 bg-dark-grey" (click)="moreDeals()" tappable>
+          <p class="gs-ff-tiles-seemore-p">see more deals </p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- arrows -->
+    <div class="gs-slider-arrow gs-slider-arrow-left bg-light-grey" tappable (click)="slideRight()">
+      <div class="slider-arrow-medium slider-arrow-left">
+        <ion-icon class="cal-month-left" md="ios-arrow-back" ios="ios-arrow-back"
+                  aria-label="arrow back"></ion-icon>
+      </div>
+    </div>
+
+    <div class="gs-slider-arrow gs-slider-arrow-right bg-light-grey" tappable (click)="slideLeft()">
+      <div class="slider-arrow-medium slider-arrow-right">
+        <ion-icon class="cal-month-right" md="ios-arrow-forward" ios="ios-arrow-forward"
+                  aria-label="arrow forward"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- change indicator -->
+  <gs-change-indicator [showChangeIndicator]="showChangeIndicator"></gs-change-indicator>
+</div>
+
+
+

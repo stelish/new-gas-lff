@@ -1,0 +1,471 @@
+$tile-height: 100px;
+$min-tile-height: 170px;
+
+.gs-lff{
+  position: relative;
+  width:100%;
+  display: block;
+
+  .gs-ff-control {
+    float: left;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+
+    textarea {
+      position: absolute;
+      width:5px;
+      height:5px;
+      top:-10px;
+      left:-10px;
+    }
+  }
+
+  .gs-ff-control-show {
+    display:block !important;
+  }
+
+  /** Selectors **/
+  .gs-ff-selectors {
+    position: relative;
+    margin: 0;
+    background: $ff-background;
+    padding: 5px 10px;
+    border-radius: 2px;
+
+    .error {
+      border:solid 2px $red !important;
+    }
+
+    .focussed {
+      ion-icon{
+        color: $red-orange;
+        transform: rotate(180deg);
+      }
+    }
+
+    gs-dd-input {
+      &:focus{
+        border: solid 1px $airnz-teal;
+      }
+    }
+
+    .gs-ff-selector {
+      padding: 5px 12px;
+      border: solid 1px #ccc;
+      float: left;
+      line-height: 22px;
+      font-size: 20px;
+      background: #fff;
+      margin: 5px 0;
+      width: 100%;
+      height: 40px;
+      position: relative;
+
+      .gs-ff-text{
+        max-width: calc(100% - 25px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 35px;
+        white-space: nowrap;
+      }
+
+      .gs-ff-selector-input{
+        display: inline-flex;
+        width: calc(100% - 26px);
+
+        ::-webkit-input-placeholder {
+          color: #ccc;
+        }
+        ::-moz-placeholder {
+          color: #ccc;
+        }
+        :-ms-input-placeholder {
+          color: #ccc;
+        }
+        :-moz-placeholder {
+          color: #ccc;
+        }
+      }
+
+      .gs-ff-selector-icon {
+        padding: 2px 0;
+        margin: 0;
+        float: right;
+      }
+
+    }
+
+    .gs-ff-promo {
+      .gs-ff-selector-input-field {
+        padding: 0;
+        margin: 1px 0 0;
+        border: none;
+        width: calc(100% - 90px);
+      }
+    }
+
+  }
+
+  /** Selector dropdown config **/
+  .gs-dd-container{
+    margin: 0 !important;
+    padding: 0 10px;
+
+    .gs-dd {
+      border-bottom: none;
+
+      .gs-dd-ul {
+        margin: 0;
+        padding: 0 15px;
+        list-style: none;
+
+        .gs-ff-travel {
+          padding: 0;
+          margin: 0;
+          position: relative;
+          height: auto;
+
+          .gs-ff-multi {
+            background: $white;
+            padding: 10px 15px;
+            margin: 0;
+            width: 100%;
+            min-width: 360px;
+          }
+        }
+
+      }
+    }
+  }
+
+  .gs-dd-pax{
+    transform: translate3d(0, -100px, 0) !important;
+    z-index: 100 !important;
+    padding: 15px 0;
+  }
+
+  .gs-dd-cal{
+    transform: translate3d(0, -150px, 0) !important;
+    z-index: 100 !important;
+  }
+
+  .period1 {
+    transform: translate3d(0%, 0%, 0);
+  }
+
+  .period2 {
+    transform: translate3d(-100vw, 0%, 0) !important;
+    height: auto !important;
+  }
+
+  .period3 {
+    transform: translate3d(-200vw, 0%, 0) !important;
+  }
+
+
+  /** Tiles **/
+  .gs-ff-tiles {
+    position: relative;
+    width: 100%;
+    max-height: 130px;
+    margin: 0;
+    z-index:0;
+
+    // arrows to be hidden on mobile
+    .gs-slider-arrow {
+      display:none;
+    }
+
+    .gs-ff-cheapest-text {
+      margin: 10px auto 5px;
+      text-align: center;
+      padding: 3px 5px;
+      background: #ccc;
+      border-radius: 12px;
+      max-width: 400px;
+    }
+
+    .gs-ff-tiles-container {
+      width: 100%;
+      overflow-x: scroll;
+      overflow-y:hidden;
+      margin: 0;
+      padding:0;
+      -webkit-transform: translate3d(0,0,0);
+      -moz-transform: translate3d(0,0,0);
+      -ms-transform: translate3d(0,0,0);
+
+
+      .gs-ff-tiles-container-ul {
+        min-width: 5000px !important;
+        height: 100%;
+        max-height: 130px;
+        padding: 0 0 0 20px;
+        list-style: none;
+        margin-top: 0;
+
+        .gs-lff-item {
+          width: 90px;
+          height: $tile-height;
+          float: left;
+          text-align: center;
+          padding: 10px 5px;
+          margin: $lff-tile-margin;
+          cursor: pointer;
+          touch-action: auto !important;
+
+          .gs-lff-item-p {
+            margin: 0;
+          }
+
+          .gs-lff-item-date {
+            margin: 0 0 10px;
+            font-size: 14px;
+          }
+
+          .gs-lff-item-btn {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+          }
+        }
+
+        .gs-ff-tiles-cheapest {
+          min-width: 150px;
+          height: $tile-height;
+          float: left;
+          text-align: center;
+          margin: $lff-tile-margin;
+          position: relative;
+          border-left: solid 5px $green;
+          touch-action: auto !important;
+
+          .gs-ff-tiles-img-container {
+            height: 70px;
+            width: 70px;
+            overflow: hidden;
+            border-radius: 50%;
+            float: left;
+            margin: 15px 5px;
+            border: solid 2px #444;
+            background: #444;
+            .gs-ff-tiles-img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .gs-ff-tiles-description {
+            float: left;
+            min-width: 70px;
+            height: 100%;
+            padding: 20px 10px 20px 5px;
+            text-align: left;
+
+            .gs-ff-tiles-description-p {
+              font-size: $minimum-label-font-size;
+              margin: 0 0 5px;
+            }
+
+            .gs-ff-tiles-description-lowest {
+              padding: 0;
+              margin: 0;
+              font-size: $xxl-font-size;
+              font-weight: 700;
+              line-height: 22px;
+            }
+          }
+        }
+        .gs-ff-tiles-seemore {
+          margin: $lff-tile-margin;
+          position: relative;
+          text-align: center;
+          padding: 20px 0;
+          width: 80px;
+          height: $tile-height;
+          float: left;
+          border-right:solid 5px $green;
+          touch-action: auto !important;
+          font-size: $minimum-label-font-size;
+        }
+      }
+    }
+
+  }
+
+
+  /** **/
+  .slider-arrow{
+    top: calc(50% + 12px);
+  }
+
+  .gs-ff-cta{
+    width:100%;
+    .gs-ff-cta-btn {
+      width: 100%;
+      text-transform: capitalize;
+    }
+  }
+
+  .pkgHat{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 8px;
+    z-index: 10;
+
+    &::before{
+      content: '';
+      position: absolute;
+      right: 0;
+      border-top: 40px solid $legacy-green;
+      border-left: 45px solid transparent;
+    }
+
+    .pkgHat-span {
+      text-transform: uppercase;
+      color: #ffffff;
+      -webkit-transform: rotate(43deg);
+      transform: rotate(43deg);
+      -webkit-transform-origin: right center;
+      transform-origin: right center;
+      position: absolute;
+      top: 20px;
+      right: 5px;
+      line-height: 1;
+      text-rendering: geometricPrecision;
+      font-size: 14px;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .pill-bg {
+    padding: 0 15px;
+  }
+
+  @media (min-width:$max-width){
+
+    .gs-ff-selectors {
+      padding: 0 10px;
+      z-index:100;
+
+      .gs-dd-control{
+        margin: 10px 5px 0;
+      }
+
+      .error{
+        margin: 5px 0 !important;
+      }
+
+      .gs-ff-selector{
+        font-size:16px;
+        line-height: 25px;
+      }
+
+      .gs-ff-pax-dd {
+        width: 200px;
+
+      }
+
+      .gs-ff-promo{
+        width: 200px;
+        padding: 5px 5px 5px 12px;
+      }
+      .gs-ff-selector-input{
+
+        .gs-ff-selector-input-field-sm{
+          font-size: 14px;
+        }
+
+        .gs-ff-selector-input-field{
+          font-size:16px;
+          line-height: 25px;
+          max-width: 138px;
+        }
+      }
+    }
+
+    .gs-ff-selectors-container{
+      max-width: 650px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    gs-dd-input {
+      .gs-dd-control {
+        max-width: 200px !important;
+      }
+    }
+
+    .gs-ff-control {
+      max-width: 220px;
+      margin: 5px;
+      display: block !important;
+
+      &:focus{
+        border: solid 1px $airnz-teal;
+      }
+    }
+
+    .gs-ff-cta{
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      width:78px;
+
+      .gs-ff-cta-btn {
+        width:auto;
+      }
+
+      &:focus{
+        border: solid 1px $airnz-teal;
+      }
+    }
+
+    .gs-ff-tiles {
+      overflow: hidden;
+      padding: 0 30px;
+      border-right: none;
+      border-left: none;
+      min-height: $min-tile-height;
+
+      .gs-slider-arrow {
+        display: block;
+
+      }
+
+      .slider-arrow-medium {
+        top: calc(50% + 20px);
+        font-size: 24px;
+        &:hover {
+          color:$red-orange;
+        }
+      }
+
+      .slider-arrow-right{
+        left: 25px;
+      }
+
+      .gs-ff-tiles-container {
+        .gs-ff-tiles-container-ul {
+          min-width: 1000px;
+        }
+      }
+
+    }
+
+    .gs-dd-container{
+      padding: 0;
+    }
+
+    .gs-section-terms {
+      margin: $terms-margin-large;
+    }
+  }
+
+}

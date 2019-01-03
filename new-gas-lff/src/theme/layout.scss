@@ -1,0 +1,124 @@
+.section-container{
+  max-width: $max-width;
+  margin: 0 auto !important;
+
+  @media (width: 1200px) {
+    width: $max-width;
+  }
+}
+
+// layout grid
+.gs-col-1,.gs-col-2,.gs-col-3,.gs-col-4,.gs-col-5,.gs-col-6,.gs-col-7,.gs-col-8,.gs-col-9,.gs-col-10{
+  float:left;
+  position: relative;
+  width: 100%;
+  margin:0;
+  border:none;
+  padding:0;
+}
+
+ion-content {
+  margin-top:56px;
+  contain: none !important;
+  overflow-scrolling: auto;
+}
+
+@media (min-width: $max-width) {
+  .gs-col-1 {
+    width: 10%;
+  }
+
+  .gs-col-2 {
+    width: 20%;
+  }
+
+  .gs-col-3 {
+    width: 30%;
+  }
+
+  .gs-col-4 {
+    width: 40%;
+  }
+
+  .gs-col-5 {
+    width: 50%;
+  }
+
+  .gs-col-6 {
+    width: 60%;
+  }
+
+  .gs-col-7 {
+    width: 70%;
+  }
+
+  .gs-col-8 {
+    width: 80%;
+  }
+
+  .gs-col-9 {
+    width: 90%;
+  }
+
+  .gs-col-10 {
+    width: 100%;
+  }
+}
+
+
+
+
+// padding
+.padding-top {
+  padding-top:25px;
+}
+
+.padding-bottom {
+  padding-bottom:25px;
+}
+
+.margin-top-bottom-center {
+  margin: 25px auto !important;
+}
+
+.horizontal-scroll-list{
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 0;
+
+  .list-ul{
+    min-width: $max-width;
+    height:100%;
+    margin: 0;
+    padding: 0 20px;
+    list-style: none;
+  }
+}
+
+.content-md, .content-ios {
+  color: #000;
+  background-color: $background-color;
+}
+
+.ion-page > ion-content {
+  position: relative !important;
+}
+
+.show-vertical-scroll {
+  overflow-y: auto !important;
+
+  ::-webkit-scrollbar {
+    width: 1.3em !important;
+  }
+
+  ::-webkit-scrollbar-thumb, ::-ms-thumb, ::-moz-range-thumb {
+    background-color: darkgrey !important;
+    outline: 1px solid slategrey !important;
+  }
+
+  ::-webkit-scrollbar-track, ::-ms-track, ::-moz-range-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+    background:$light-grey;
+  }
+}

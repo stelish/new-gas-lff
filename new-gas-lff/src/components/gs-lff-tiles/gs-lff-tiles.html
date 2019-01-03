@@ -1,0 +1,36 @@
+  <!-- tile container -->
+  <div class="gs-ff-tiles gs-ff-tiles-portable">
+    <div #ffTilesContainer class="gs-ff-tiles-container gs-ff-tiles-container-portable">
+      <ul class="gs-ff-tiles-container-portable-ul clearfix slide-animation" [style.marginLeft]="currentLeftPosition + 'px'">
+        <!-- deal -->
+        <ng-template ngFor let-deal [ngForOf]="ffDeals.priceAvailability">
+          <li #ffTile id="{{deal.id}}" class="card card-1 gs-lff-item" (click)="gotoDeal(deal)">
+            <p class="gs-lff-item-p">{{ deal.outboundDate | date:'EEE' }}</p>
+            <h4 class="gs-lff-item-h4">{{ deal.outboundDate | date: 'd MMM'}}</h4>
+            <button class="gs-lff-item-button" ion-button color="secondary">${{deal.farePrice}}</button>
+
+            <!-- deal hat -->
+            <div class="pkgHat">
+              <span class="pkgHat-span">Deal</span>
+            </div>
+
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+
+    <!-- arrows -->
+    <div class="bg-light-grey gs-slider-arrow gs-slider-arrow-left" tappable (click)="slideRight()">
+      <div class="slider-arrow-medium slider-arrow slider-arrow-left">
+        <ion-icon class="cal-month-left" md="ios-arrow-back" ios="ios-arrow-back"></ion-icon>
+      </div>
+    </div>
+
+    <div class="bg-light-grey gs-slider-arrow gs-slider-arrow-right" tappable (click)="slideLeft()">
+      <div class="slider-arrow-medium slider-arrow slider-arrow-right">
+        <ion-icon class="cal-month-right" md="ios-arrow-forward" ios="ios-arrow-forward"></ion-icon>
+      </div>
+    </div>
+
+  </div>
+

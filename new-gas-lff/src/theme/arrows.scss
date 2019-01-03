@@ -1,0 +1,63 @@
+.slider-arrow{
+  position: absolute;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  //background: rgba(255, 255, 255, 0.5);
+  //box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  cursor: pointer;
+
+  @include vertical-align();
+
+  :hover{
+    color: $legacy-green;
+  }
+}
+
+.active {
+  color: $legacy-green;
+}
+
+.gs-slider-arrow{
+  width: 50px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index:10;
+}
+
+.gs-slider-arrow-right {
+  right: 0;
+}
+
+.gs-slider-arrow-left {
+  left: 0;
+}
+
+.slider-arrow-medium{
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.slider-arrow-small{
+  width: 20px;
+  height: 20px;
+  font-size: $regular-font-size;
+  line-height: $regular-font-size;
+}
+
+.slider-arrow-left{
+  position: absolute;
+  left: 5px;
+  z-index: 10;
+}
+
+.slider-arrow-right{
+  position: absolute;
+  right: 5px;
+  z-index: 10;
+}

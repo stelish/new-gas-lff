@@ -1,0 +1,22 @@
+/** low fare finder **/
+.gs-ff {
+  position: relative;
+  margin: 0;
+  overflow: visible;
+  padding-bottom: 50px;
+  z-index: 10;
+  background: $light-grey;
+
+  @media (min-width: $max-width) {
+
+    .gs-section-title{
+      z-index:102;
+    }
+    /**
+     */
+    .gs-dd-pax, .gs-dd-cal{
+      transform: translate3d(0, 0, 0) !important;
+      z-index: 102 !important;
+    }
+  }
+}

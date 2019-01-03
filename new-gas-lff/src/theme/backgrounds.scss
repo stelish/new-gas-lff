@@ -1,0 +1,263 @@
+body{
+  background: $background-color;
+}
+.even-bg{
+  background: $background-color !important;
+  width:100%;
+}
+
+.odd-bg{
+  background: $alternate-background-color !important;
+  //border-top: solid 1px #ccc;
+  //border-bottom: solid 1px #ccc;
+  width:100%;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+}
+
+.bg-teal{
+  background: $ming !important;
+  color: white;
+}
+.bg-blue, .bgBlue{
+  background: $blue !important;
+  color: white;
+}
+
+.bg-red-orange, .bgRedOrange{
+  background: $red-orange !important;
+  color: white;
+}
+
+.bg-cyan{
+  background: #00BCD4 !important;
+  color: white;
+}
+
+.bg-indigo, .bgIndigo{
+  background: #3F51B5 !important;
+  color: white;
+}
+
+.bg-dark-grey, .bgDarkGrey{
+  background: #232323 !important;
+  color: $white !important;
+}
+
+.bg-mid-grey, .bgMidGrey{
+  background: #607D8B !important;
+  color: $white !important;
+}
+
+.bg-light-grey, .bgLightGrey{
+  background: #efefef  !important;
+  color: $charcoal !important;
+}
+
+.bg-red{
+  background-color: $red;
+  color: #fff;
+}
+
+.bg-green, .bgGreen{
+   background-color: $legacy-green !important;
+   color: #fff;
+ }
+
+.bg-pale-green, .bgPaleGreen{
+  background-color: $green !important;
+  color: #fff;
+}
+
+.bg-white,.bgWhite{
+  background-color: $white !important;
+  color: $charcoal !important;
+}
+
+// margins
+.margin-15-top {
+  margin-top: 15px;
+}
+
+.margin-15-bottom {
+  margin-bottom: 15px;
+}
+
+// Borders
+.bd-top-dark-grey {
+  margin: 15px 0;
+  border-top: solid 1px $divider-color;
+}
+
+.bd-bottom-dark-grey {
+  &:after {
+    content: "";
+    height: 1px;
+    background: $charcoal;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 30px 0 15px;
+  }
+}
+
+.bd-bottom-thick-dark-grey {
+  border-bottom: solid 1px $divider-color;
+}
+
+.bd-bottom-light-grey {
+  border-bottom: solid 1px #ccc;
+}
+
+.bd-top-light-grey {
+  border-top: solid 1px #ccc;
+}
+
+.bd-top-thick-light-grey {
+  border-top: solid 5px #ccc;
+}
+
+.bd-all-light-grey{
+  border:solid 1px #ccc;
+}
+
+.bd-all-red{
+  border:solid 1px $red;
+}
+
+.bd-left-right-light-grey {
+  &:before{
+    content: "";
+    height: 200px;
+    background: #ccc;
+    width: 1px;
+    position: absolute;
+    z-index:10;
+    left:0;
+    top: calc( (100% - 200px) / 2);
+    display: block;
+  }
+
+  &:after{
+    content: "";
+    height: 200px;
+    background: #ccc;
+    width: 1px;
+    position: absolute;
+    z-index:10;
+    right:0;
+    top: calc( (100% - 200px) / 2);
+    display: block;
+  }
+}
+
+.bd-left-light-grey {
+  &:before{
+    content: "";
+    height: 100%;
+    background: #ccc;
+    width: 1px;
+    position: absolute;
+    z-index:10;
+    left:0;
+    top: calc( 100% / 2);
+    display: block;
+  }
+}
+
+.bd-bottom-black-full-gap{
+  width:100%;
+  border-bottom: solid 2px $charcoal;
+  margin: 30px 0 10px;
+}
+
+.gs-center-divider{
+  content: "";
+  height: 2px;
+  background: #008C3C;
+  width: 150px;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+}
+
+
+// gaps
+.gap-2-left{
+  margin-right:1px;
+  margin-top:2px;
+
+  @media (max-width: $max-mobile-width) {
+    margin:2px 0 0;
+  }
+}
+
+.gap-2-right{
+  margin-left:1px;
+  margin-top:2px;
+
+  @media (max-width: $max-mobile-width) {
+    margin:2px 0 0;
+  }
+}
+
+.gap-2{
+  margin-top:2px;
+}
+
+.pill-bg {
+  width: fit-content;
+  padding: 15px;
+  text-align: center;
+  display: block;
+  margin:0 auto;
+  p {
+    background-color: $default-pill-background-colour;
+    margin: $pill-padding;
+    text-align: center;
+    padding: 3px 15px;
+    border-radius: 16px;
+  }
+}
+
+.pill-bg-green,.pill-bg-orange {
+   width: fit-content;
+   padding: 0;
+   margin: 5px 0;
+   text-align: center;
+   display: block;
+   p {
+     background-color: $light-grey;
+     margin: 0;
+     text-align: center;
+     padding: 3px 15px;
+     border-radius: 16px;
+     font-weight: 500;
+   }
+ }
+
+.pill-bg-green {
+  p {
+    background-color: $legacy-green;
+    color: $white;
+  }
+}
+
+.pill-bg-orange {
+  p {
+    background-color: $red-orange;
+    color: $white;
+  }
+}
+
+.gs-bubble{
+  min-height: 20px;
+  min-width: 20px;
+  max-height: 20px;
+  max-width: 20px;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 50%;
+  background-color: $green;
+}

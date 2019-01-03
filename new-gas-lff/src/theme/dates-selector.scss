@@ -1,0 +1,56 @@
+.gs-ff-dates-selector {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  float: none;
+  display: block;
+
+  .gs-ff-dates-inner {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    .selected {
+      border-bottom: 1px solid #fff;
+    }
+
+    .gs-ff-dates {
+      min-width: 120px;
+      height: 70px;
+      text-align: left;
+      border-bottom: solid 1px #eee;
+      padding: 5px;
+
+      small {
+        text-transform: uppercase;
+      }
+    }
+
+    .gs-ff-depart, .gs-ff-return {
+      min-width: 135px;
+      text-align: left;
+      margin-top: 5px;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+
+      h4{
+        line-height: 27px;
+        font-size: 200%;
+        font-weight: 100;
+        margin-right: 5px;
+        margin: 0;
+      }
+
+      p{
+        font-size: 80%;
+        margin: 0 5px;
+      }
+    }
+
+    ion-icon {
+      font-size: 2.5em;
+      margin-right: 20px;
+    }
+  }
+}

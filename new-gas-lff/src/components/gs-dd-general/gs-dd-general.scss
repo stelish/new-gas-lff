@@ -1,0 +1,106 @@
+.gs-dd-general{
+  margin-top: 5px;
+  width:100%;
+  display: none;
+  z-index: 100;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  ::-webkit-scrollbar {
+    margin-top:15px;
+    width: 15px;
+    background: $light-grey;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: #ccc;
+    max-height:15px;
+  }
+
+  .gs-dd-general-wrapper{
+    padding: 0;
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border:solid 1px $light-grey;
+
+    .gs-dd{
+      border-bottom: none !important;
+    }
+
+    .gs-dd-general-inner{
+      margin: 0;
+      padding:0;
+      a{
+        color: $charcoal;
+      }
+      h4{
+        margin: 10px 0;
+        font-size: 120%;
+        font-weight: 700;
+      }
+      .gs-dd-col{
+        ul {
+          li {
+            width: 100%;
+            padding: 6px 9px;
+            position: relative;
+            cursor: pointer;
+            text-transform: capitalize;
+            text-shadow: none;
+
+            &:hover{
+              background: $blue;
+              color:$white;
+
+
+              a{
+                color:$white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .gs-dd-close-btn{
+    position: absolute;
+    top: -12px;
+    right: -8px;
+    font-size: 150%;
+    margin: 0;
+    padding: 0;
+    z-index: 20;
+  }
+
+  .selected{
+    display:none;
+  }
+
+  &::after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
+  @media (min-width:$max-width){
+    .gsDdShow {
+      .gs-dd-general-wrapper {
+        position: absolute;
+        background: #fff;
+        z-index: 10;
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.gsDdShow {
+  display: block !important;
+}

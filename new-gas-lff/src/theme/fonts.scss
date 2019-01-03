@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'airnewzald';
+  src: url('#{$font-path}/airnewzald-blackitalic.woff2') format('woff2'),
+  url('#{$font-path}/airnewzald-blackitalic.woff') format('woff');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Air New Zealand Sans';
+  src: url('#{$font-path}/AirNewZealandSans-Regular.woff2') format('woff2'),
+  url('#{$font-path}/AirNewZealandSans-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Air New Zealand Sans';
+  font-weight: 600;
+  src: url('#{$font-path}/AirNewZealandSans-Semibold.woff2') format('woff2'),
+  url('#{$font-path}/AirNewZealandSans-Semibold.woff') format('woff');
+  font-display: swap;
+}
+

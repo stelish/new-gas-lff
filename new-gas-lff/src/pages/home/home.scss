@@ -1,0 +1,94 @@
+@import "../../theme/header.scss";
+@import "../../theme/text.scss";
+@import "../../theme/hero.scss";
+@import "../../theme/buttons.scss";
+@import "../../theme/backgrounds.scss";
+@import "../../theme/cards.scss";
+@import "../../theme/lowfarefinder.scss";
+//@import "../../theme/packages.scss";
+@import "../../theme/dropdowns.scss";
+@import "../../theme/tickers.scss";
+@import "../../theme/layout.scss";
+@import "../../theme/mixins.scss";
+@import "../../theme/arrows.scss";
+@import "../../theme/animations";
+
+page-home {
+
+  .content-md, .content-ios {
+    color: #000;
+    background-color: $background-color;
+    overflow:auto;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+  }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: rgba(0,0,0,0.6);
+    background-color: transparent;
+  }
+
+  .bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+    color: rgba(0,0,0,0.6);
+    background-color: transparent;
+  }
+
+  .gs-more-deals-label {
+    button {
+      margin-left: calc(100vw/2 - 150px);
+      margin-top:30px;
+      margin-bottom: 15px;
+      width:300px;
+      height: 60px;
+
+      h4 {
+        &:after{
+          content: "";
+          display: block;
+          background: #101010;
+          width: 50%;
+          margin-top: 15px;
+          height: 1px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .home-gld-title {
+    z-index: unset !important;
+  }
+
+
+  @media (min-width: $max-width) {
+
+  }
+}
+
+.ion-page {
+  ion-content {
+    overflow: auto;
+
+    .input-cover {
+      position: static;
+    }
+  }
+}
+
+.input-cover {
+  position: static;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  body {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+}

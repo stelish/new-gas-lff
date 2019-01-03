@@ -1,0 +1,114 @@
+@import "animations.scss";
+
+.gs-hero-large{
+  width:100%;
+  background-size: cover;
+  min-height: 450px;
+  position: relative;
+  height: calc(65vh);
+  overflow: hidden;
+  max-height: 600px;
+
+  .gs-hero-bg{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+    ), url("http://farm1.nzstatic.com/_proxy/imageproxy_1y/serve/la-zeppa.jpg?focalpointx=50&focalpointy=50&height=427&outputformat=jpg&quality=85&source=2800369&transformationsystem=focalpointcrop&width=640&securitytoken=CD62E19176283A43D263362DB2294215") center center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+    animation: SCALE-BG 100s infinite;
+  }
+
+  .gs-hero-arrow {
+    position: absolute;
+    font-size: 32px;
+    line-height: 32px;
+    top:225px;
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+    color:$white;
+    font-weight: bold;
+  }
+  .gs-hero-right{
+    right: 5px;
+  }
+
+  .gs-hero-left{
+    left: 5px;
+  }
+
+  .gs-hero-thumbnails{
+    position: relative;
+    margin: 0 auto -30px;
+
+    ul{
+      list-style: none;
+      padding:0;
+      width: 80px;
+      margin: 0 auto;
+      display: inline-flex;
+      li{
+        width: 15px;
+        height:15px;
+        background: rgba(255,255,255,0.4);
+        border: solid 1px $white;
+        margin:5px;
+      }
+      .active{
+        background: $legacy-green;
+        border: transparent;
+      }
+    }
+  }
+
+  .gs-title-bottom{
+    position: absolute;
+    bottom: 50px;
+    min-height: 40px;
+    width:100%;
+    text-align: center;
+    font-family: $heading-font;
+    font-style: italic;
+    text-transform: uppercase;
+    color:$white;
+    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.8);
+    h1{
+      margin:0;
+      font-weight: bold;
+      font-size: 250%;
+    }
+
+    p {
+      margin: 0;
+      font-size: 150%;
+    }
+  }
+
+  .gs-weather-widget{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .gs-info-icon{
+    background: $black;
+    color: $white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    padding: 10px;
+    display: inline-flex;
+    transition: all .5s ease-in-out;
+
+    ion-icon{
+      margin: 0 5px;
+    }
+  }
+
+  .rotateUp{
+    transform: rotate(180deg);
+  }
+
+}

@@ -1,0 +1,104 @@
+.bg-motion-animation{
+  animation: SCALE-BG 100s infinite;
+}
+
+.fade {
+  animation: FADEIN 1.5s;
+}
+
+.fade-long{
+  animation: LONGFADEIN 1.5s;
+}
+
+
+
+/** ANIMATIONS **/
+@-webkit-keyframes SCALE-BG {
+  0% {
+    opacity: 0.5;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    transform: scale3d(1.5, 1.5, 1.5) translate3d(-25px, -20px, 0px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(2, 2, 2) translate3d(-35px, -15px, 0px);
+    opacity: 0;
+  }
+}
+
+.slide-animation, .bg-animation{
+    transition: all 0.5s ease-in-out;
+    touch-action: pan-x pan-y;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.rotatingAnimation{
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.shrinkingAnimation{
+  animation-name: shrink;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes shrink {
+  0% {
+    -webkit-transform:scale(1);
+  }
+  95% {
+    -webkit-transform:scale(0.1);
+  }
+  100% {
+     display: none;
+  }
+}
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0;
+    display:none;
+    background-color: rgba(0,0,0,0);
+  }
+  15% {
+    opacity: 0.6!important;
+    display:block!important;
+    background-color: rgba(0,0,0,0.2);
+
+  }
+  100% {
+    opacity: 1!important;
+    background-color: rgba(0,0,0,1);
+  }
+}
+
+@keyframes LONGFADEIN {
+  0% {
+    opacity: 0;
+
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+

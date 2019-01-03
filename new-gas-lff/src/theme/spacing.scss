@@ -1,0 +1,23 @@
+$default-padding-margin: 25px;
+$gld-margin: 2px 1px;
+$lff-tile-margin: 0 5px;
+$title-padding: 50px 15px 25px;
+$pill-padding: 25px 0;
+$terms-margin-large: 15px 15px 0;
+
+@mixin gld-margin($gld-margin) {
+  .gs-gld-tile{
+    margin: $gld-margin !important;
+  }
+}
+
+@mixin title-padding($title-padding) {
+  .gs-section-title{
+    padding: $title-padding !important;
+  }
+}
+
+@media (min-width: $max-width) {
+  @include gld-margin($gld-margin: 8px 10px);
+  @include title-padding($title-padding: 50px 0 25px);
+}

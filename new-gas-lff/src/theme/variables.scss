@@ -1,0 +1,39 @@
+$font-path: "/beta/build/assets/fonts";
+
+@import "ionic.globals";
+
+@function property-value($property, $selector: null) {
+  @return $magic;
+}
+
+// Named Color Variables
+@import "colours";
+
+// sizes
+$max-width: 1170px;
+$max-mobile-width: 480px;
+$max-form-width: 650px;
+
+@import "gas.theme";
+
+// Ionicons
+@import "ionicons";
+
+// include fonts
+@import "fonts";
+
+/** spacing **/
+@import "spacing";
+
+/** Borders **/
+$input-default-border: solid 1px $stone;
+$input-default-border-radius: 3px;
+
+/** Background colours **/
+$default-pill-background-colour: #ccc;
+
+/** Component Sizing **/
+$min-gld-tile-height-desktop: 80px;
+$min-gld-tile-height: 90px;
+
+
