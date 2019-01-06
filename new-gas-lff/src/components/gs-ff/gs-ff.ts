@@ -9,11 +9,18 @@ import {Platform} from "ionic-angular";
 import {GsAnalyticsServiceProvider} from "../../providers/gs-analytics-service/gs-analytics-service";
 import {BookUrlService} from "../../providers/book-url-service";
 import {DatePipe} from "@angular/common";
+import { ServerTimeStore } from '../../stores/server-time-store';
 
 @Component({
   selector: 'gs-ff',
   templateUrl: 'gs-ff.html',
-  providers : [WebApiObservableService, AirportsModel, PlatformUtilitiesProvider, GsLffUtilityService],
+  providers : [
+    WebApiObservableService, 
+    AirportsModel, 
+    PlatformUtilitiesProvider, 
+    GsLffUtilityService, 
+    ServerTimeStore
+  ],
 })
 export class GsFfComponent {
 

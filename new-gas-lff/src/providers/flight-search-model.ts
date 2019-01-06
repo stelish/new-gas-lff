@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FlightSearchLegModel } from 'flight-search-leg-model';
+import {FlightSearchLegModel} from './flight-search-leg-model';
 
 @Injectable()
 export class FlightSearchModel {

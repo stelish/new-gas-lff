@@ -4,11 +4,12 @@ import {GsDdInputModule} from "../gs-dd-input/Gs-dd-input.module";
 import {pipesModule} from "../../pipes/pipes.module";
 import {GsFfComponent} from "./gs-ff";
 import {GsDdGeneralModule} from "../gs-dd-general/gs-dd-general.module";
+import { GsCalDdModule } from '../gs-cal-dd/gs-cal-dd.module';
 
 
 @NgModule({
   imports: [
-    IonicPageModule.forChild(GsFfComponent),GsDdInputModule,GsDdGeneralModule,pipesModule
+    IonicPageModule.forChild(GsFfComponent),GsDdInputModule,GsDdGeneralModule,GsCalDdModule,pipesModule
   ],
 
   declarations: [

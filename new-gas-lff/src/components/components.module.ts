@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { GsFfComponent } from './gs-ff/gs-ff';
+
 @NgModule({
-	declarations: [GsFfComponent],
+	declarations: [GsFfComponent,],
 	imports: [],
-	exports: [GsFfComponent]
+	exports: [GsFfComponent,]
 })
 export class ComponentsModule {}

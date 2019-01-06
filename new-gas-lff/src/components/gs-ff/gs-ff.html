@@ -1,8 +1,8 @@
-<div class="gs-ff">
+<div class="gs-ff-inner">
   <!-- controls -->
   <div class="gs-ff-form">
 
-    <div class="gs-ff-form-dr">
+    <div class="gs-ff-form-item gs-ff-form-dr clearfix">
       <!-- origin -->
       <gs-dd-input [ngClass]="{error:flightModelError.origin}" prompt="from" [items]="allAirports" [selectedItem]="ffOriginIata"
                    [featured]="airportsModel.featuredNZAirportList" tabIndex="-1"
@@ -16,15 +16,31 @@
                    gaTrackingEventItem="destination" gaTrackingEventCategory="low fare finder"></gs-dd-input>
     </div>
 
-    <div class="gs-ff-form-dates" [ngClass]="{'gs-ff-control-show': userInteraction}">
-
+    <div class="gs-ff-form-item gs-ff-form-tt clearfix">
+      <ion-list radio-group="" role="radiogroup">
+        <ion-item mode="md">
+          <ion-label color="danger" mode="md" class="label label-md label-md-danger" id="lbl-5">oneway</ion-label>
+          <ion-radio color="danger" mode="md" value="false" class="radio radio-md radio-md-danger"></ion-radio>
+        </ion-item>
+        <ion-item mode="md">
+            <ion-label color="danger" mode="md" class="label label-md label-md-danger" id="lbl-6">return</ion-label>
+            <ion-radio color="danger" mode="md" value="true" class="radio radio-md radio-md-danger"></ion-radio>
+          </ion-item>
+      </ion-list>
     </div>
 
-    <div class="gs-ff-form-pax" [ngClass]="{'gs-ff-control-show': userInteraction}">
-
+    <div class="gs-ff-form-item gs-ff-form-dates clearfix" [ngClass]="{'gs-ff-control-show': userInteraction}">
+      <gs-cal-dd></gs-cal-dd>
+      <gs-cal-dd></gs-cal-dd>
     </div>
 
-    <div class="gs-ff-form-extras" [ngClass]="{'gs-ff-control-show': userInteraction}">
+    <div class="gs-ff-form-item gs-ff-form-pax clearfix" [ngClass]="{'gs-ff-control-show': userInteraction}">
+      
+    </div>
+
+    <div class="gs-ff-form-item gs-ff-form-extras" [ngClass]="{'gs-ff-control-show': userInteraction}">
+
+      <input class="gs-input" placeholder="promo code">
 
       <button ion-button>Book</button>
     </div>

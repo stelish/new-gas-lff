@@ -29,6 +29,7 @@ import {AirportsModel} from "../providers/airports-model";
 import {CurrentPages} from "../enums/current-pages";
 import { PackageDestinationInboundOutboundParserService } from '../services/package-destination-inbound-outbound-parser-service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { DateUtilityService } from '../services/date-utility-service';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ErrorMessagePrompts,
     AirportsModel,
     WebApiObservableService,
+    DateUtilityService,
     PackagesModel,
     PackageComponentParserService,
     PackageUtilityService,
