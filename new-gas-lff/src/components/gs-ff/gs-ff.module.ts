@@ -5,11 +5,12 @@ import {pipesModule} from "../../pipes/pipes.module";
 import {GsFfComponent} from "./gs-ff";
 import {GsDdGeneralModule} from "../gs-dd-general/gs-dd-general.module";
 import { GsCalDdModule } from '../gs-cal-dd/gs-cal-dd.module';
+import { GsUnitTickerComponentModule } from '../gs-unit-ticker/gs-unit-ticker.module';
 
 
 @NgModule({
   imports: [
-    IonicPageModule.forChild(GsFfComponent),GsDdInputModule,GsDdGeneralModule,GsCalDdModule,pipesModule
+    IonicPageModule.forChild(GsFfComponent),GsDdInputModule,GsDdGeneralModule,GsCalDdModule,GsUnitTickerComponentModule,pipesModule
   ],
 
   declarations: [

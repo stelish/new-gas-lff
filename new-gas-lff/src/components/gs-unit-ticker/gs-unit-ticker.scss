@@ -1,0 +1,45 @@
+gs-unit-ticker {
+
+    $fontSize: 14px;
+
+    .gs-ticker-inner {
+        display: inline-flex;
+        position: relative;
+        max-width: 120px;
+    }
+
+    .gs-ticker-btn {
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        padding: 1px 5px;
+        border: solid 2px $legacy-green;
+        position: relative;
+    }
+
+    // .gs-ticker-btn-right {
+    //     right: 0;
+    // }
+
+    // .gs-ticker-btn-left {
+    //     left: 0;
+    // }
+
+    .gs-ticker-count{
+        border-radius: 2px;
+        border: solid 1px #222;
+        text-align: center;
+        min-width: 40px;
+        width: calc(100% - 60px);
+        min-height: 28px;
+        margin: 0 10px;
+
+        p{
+            margin:0;
+            font-size: $fontSize;
+            line-height: 28px;
+        }
+    }
+
+}

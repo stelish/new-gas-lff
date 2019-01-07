@@ -1,0 +1,82 @@
+<div class="gs-cal-dd-inner">
+      <label>{{label}}</label>
+      <input class="gs-input" [placeholder]="placeholder">
+      <ion-icon class="gs-input-icon" name="calendar"></ion-icon>
+</div>
+
+<div class="gs-cal-container">
+  <!-- arrows -->
+  <div class="gs-cal-arrows">
+    <div class="gs-cal-arrows-inner">
+        <div class="gs-cal-arrow gs-cal-arrow-left">
+            <ion-icon class="cal-month-left" md="ios-arrow-back" ios="ios-arrow-back"></ion-icon>
+          </div>
+  
+          <div class="gs-cal-arrow gs-cal-arrow-right">
+              <ion-icon class="cal-month-right" md="ios-arrow-forward" ios="ios-arrow-forward"></ion-icon>
+        </div>
+    </div>
+  </div>
+
+  <ul class="gs-cal-list-container">
+    <li>
+      <div class="gs-select-month-container">
+          <select class="gs-select-month" [(ngModel)]="selectedMonth">
+              <option *ngFor="let m of gsMiscellaneous.monthDateNames" [ngValue]="m.value">{{m.name}} 
+              </option>
+          </select>
+      </div>
+
+      <div class="gs-cal-row">
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+      </div>
+
+      <div class="gs-cal-row">
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+      </div>
+
+      <div class="gs-cal-row">
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+      </div>
+
+      <div class="gs-cal-row">
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+      </div>
+
+      <div class="gs-cal-row">
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+          <div class="gs-cal-item"></div>
+      </div>
+
+    </li>
+  </ul>
+</div>

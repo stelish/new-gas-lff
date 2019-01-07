@@ -3,6 +3,7 @@
 gs-ff {
     display: block;
     padding: 15px 25px;
+    max-width: 750px;
 
     .gs-input {
         max-width: 220px;
@@ -20,17 +21,49 @@ gs-ff {
         width: 100%;
     }
 
+    .gs-ff-form-pax {
+        display: inline-flex;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .gs-ff-form-unit {
+        width: 33.3333%;
+        margin: 0 10px;
+        p {
+            margin: 0;
+            font-weight: bold;
+
+            span {
+                font-weight: normal;
+            }
+        }
+    }
+
     .gs-ff-form-tt {
+        position: inline-flex;
+        display: block;
+        align-items: center;
+        padding-bottom: 10px;
+
+        .gs-link {
+            line-height: 44px;
+            margin-left:25px;
+        }
+
         ion-list {
             max-width: 300px;
-            margin: 5px 0;
+            margin: 0;
         }
 
         ion-item {
             float: left;
-            width: 40%;
-            margin: 5px 0;
+            width: 35%;
+            margin: 0;
+            padding: 0;
             background: transparent;
+            border:none !important;
+            text-align: right;
         }
     }
 }

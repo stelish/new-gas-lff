@@ -27,6 +27,7 @@
             <ion-radio color="danger" mode="md" value="true" class="radio radio-md radio-md-danger"></ion-radio>
           </ion-item>
       </ion-list>
+      <a class="gs-link" href="https://flightbookings.grabaseat.co.nz/vbook/actions/multicitysearch" target="_blank">Book a multistop trip</a>
     </div>
 
     <div class="gs-ff-form-item gs-ff-form-dates clearfix" [ngClass]="{'gs-ff-control-show': userInteraction}">
@@ -36,6 +37,21 @@
 
     <div class="gs-ff-form-item gs-ff-form-pax clearfix" [ngClass]="{'gs-ff-control-show': userInteraction}">
       
+      <div class="gs-ff-form-unit">
+          <p>Adults</p>
+          <gs-unit-ticker></gs-unit-ticker>
+      </div>
+      
+      <div class="gs-ff-form-unit">
+          <p>Children  <span>2-11 years</span></p>
+          <gs-unit-ticker></gs-unit-ticker>
+      </div>
+
+      <div class="gs-ff-form-unit">
+          <p>Infants <span>0-23 months</span></p>
+          <gs-unit-ticker></gs-unit-ticker>
+      </div>
+
     </div>
 
     <div class="gs-ff-form-item gs-ff-form-extras" [ngClass]="{'gs-ff-control-show': userInteraction}">
